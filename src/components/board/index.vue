@@ -1,6 +1,5 @@
 <template>
     <div id="contents">
-        asd
         <input type="text" placeholder="title" v-model="title" />
         <input type="text" placeholder="author" v-model="author" />
         <button>submit</button>
@@ -9,9 +8,13 @@
 </template>
 
 <script>
-    export default {
-        name: "index"
-    }
+export default {
+    name: "index",
+    data: () => ({
+        title: 'UMJI',
+        author: 'KIM'
+    })
+}
 </script>
 
 <style scoped>
