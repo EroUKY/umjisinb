@@ -8,7 +8,9 @@
                 </div>
             </div>
         </div>
-        <b-button> submit</b-button>
+        <div class="col-12 text-right pt-3">
+            <b-button size="sm" variant="primary" class="btn btn-primary" >SAVE</b-button>
+        </div>
     </div>
 </template>
 

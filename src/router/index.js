@@ -22,14 +22,29 @@ export default new Router({
             component: () => import('@/components/404/404')
         },
         {
-            path: '/new',
-            name: 'new',
+            path: '/writeboard',
+            name: 'writeboard',
             component: () => import('@/components/board/writeboard')
         },
         {
             path: '/image',
             name: 'image',
             component: () => import('@/components/board/imageboard')
+        },
+        {
+            path: '/newAccount',
+            name: 'newAccount',
+            component: () => import('@/components/user/create')
+        },
+        {
+            path: '/showboard',
+            name: 'showboard',
+            component: () => import('@/components/board/showboard')
+        },
+        {
+            path: '/showimage',
+            name: 'showimage',
+            component: () => import('@/components/board/showimage')
         },
         { path: '*', redirect: '/404' }
     ]
