@@ -1,10 +1,12 @@
 <template>
-    <div id="contents">
-        <input type="text" placeholder="title" v-model="title" />
-        <input type="text" placeholder="author" v-model="author" />
-        <button>submit</button>
+    <div>
+        <SideBar></SideBar>
+        <div id="contents">
+            <input type="text" placeholder="title" v-model="title" />
+            <input type="text" placeholder="author" v-model="author" />
+            <button>submit</button>
+        </div>
     </div>
-
 </template>
 
 <script>

@@ -7,6 +7,8 @@ import router from './router/index'
 
 Vue.config.productionTip = false
 
+const SideBar = () => import('@/components/common/sidebar')
+Vue.component('SideBar',SideBar)
 new Vue({
   render: h => h(App),
   router

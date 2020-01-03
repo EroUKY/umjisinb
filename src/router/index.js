@@ -7,8 +7,8 @@ export default new Router({
     mode: 'history',
     routes: [
         {
-            path: '/board/index',
-            name: 'Router',
+            path: '/list',
+            name: 'list',
             component: () => import('@/components/board/index')
         },
         {

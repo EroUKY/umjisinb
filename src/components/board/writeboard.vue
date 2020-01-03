@@ -1,5 +1,6 @@
 <template>
     <div>
+        <SideBar></SideBar>
         <div class="container-fluid">
             <div class="row">
                 <div class="col h-100">

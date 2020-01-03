@@ -1,5 +1,6 @@
 <template>
     <div>
+        <SideBar></SideBar>
         <b-form>
             <b-form-group>
                 <b-form-file
@@ -21,23 +22,14 @@
 </template>
 
 <script>
+
     export default {
         name: "imageboard",
         data: () => ({
             imageFile: null,
             imageUrl: null,
             imagePreview: null
-        }),
-        inputImage (value) {
-            let url
-            try {
-                url = new URL(value).toString()
-            } catch (e) {}
-            if (url) {
-                this.imageUrl = url
-            }
-        }
-    }
+        })
     }
 </script>
 
