@@ -10,7 +10,6 @@
             <div>
                 <input type="password" placeholder="password입력"/>
             </div>
-
             <b-button>log In</b-button>
         </form>
     </div>

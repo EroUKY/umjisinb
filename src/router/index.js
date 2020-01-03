@@ -21,6 +21,16 @@ export default new Router({
             name: '404',
             component: () => import('@/components/404/404')
         },
+        {
+            path: '/new',
+            name: 'new',
+            component: () => import('@/components/board/writeboard')
+        },
+        {
+            path: '/image',
+            name: 'image',
+            component: () => import('@/components/board/imageboard')
+        },
         { path: '*', redirect: '/404' }
     ]
 })
