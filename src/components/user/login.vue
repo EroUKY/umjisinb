@@ -10,9 +10,9 @@
             <div>
                 <input type="password" id="userPw" name="userPw" class="form-control col-6" placeholder="password입력"/>
             </div>
-            <b-button type="submit"  class="btn btn-success mt-3">log In</b-button>
+            <button type="submit"  class="btn btn-success mt-3" >log In</button>
         </form>
-        <b-button class="btn btn-warning mt-3" ><router-link to="/newAccount">New Account</router-link></b-button>
+        <button class="btn btn-warning mt-3" ><router-link to="/newAccount">New Account</router-link></button>
     </div>
 </template>
 
@@ -32,7 +32,7 @@
                         userId: this.userId,
                         userPw: this.userPw
                     })
-
+                    console.log("aa");
                 }catch (e) {
                     console.log(e)
                 }
