@@ -1,3 +1,15 @@
 module.exports = {
-    runtimeCompiler: true
+    runtimeCompiler: true,
+    devServer:{
+        overlay: true,
+        proxy: {
+            '/api': {
+                target: 'http://localshot:8080',
+                changeOrigin: true,
+                pathRewrite: {
+                    '^/api': ''
+                }
+            }
+        }
+    }
 }

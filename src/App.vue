@@ -7,6 +7,7 @@
 
 <script>
 //import Sidebar from "@/components/common/sidebar";
+/* eslint-disable no-console */
 export default {
   name: 'app',
   components: {

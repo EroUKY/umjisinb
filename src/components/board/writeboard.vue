@@ -3,9 +3,15 @@
         <SideBar></SideBar>
         <div class="container-fluid">
             <div class="row">
-                <div class="col h-100">
-                    <div id="editor"></div>
-                </div>
+                <b-form id="board" name="board">
+                    <div>
+                        <input type="hidden" id="idx" name="idx" v-model="idx"  />
+                        <input type="text" class="form-control" id="title" name="title" placeholder="title">
+                    </div>
+                    <div class="col h-100">
+                        <div id="editor" name="editor"></div>
+                    </div>
+                </b-form>
             </div>
         </div>
         <div class="col-12 text-right pt-3">
@@ -25,7 +31,8 @@ export default {
         contents: String
     },
     data: () =>({
-        editor: Quill.prototype
+        editor: Quill.prototype,
+        idx: "1"
     }),
     mounted () {
         let toolbarOptions = [
@@ -54,7 +61,27 @@ export default {
         this.editor.on('text-change', () => {
             this.$emit('update:contents', this.editor.root.innerHTML)
         })
+    },
+
+    async save () {
+        this.pending = true
+        try {
+            const {statusText} = await this.axios({
+                url: `/writeboard/${this.No}`,
+                method: 'put',
+                data: {
+                    title : this.title,
+                    editor: this.editor
+                }
+            })
+            this.toast(statusText, {title: 'Success', variant: 'success'})
+            this.files = []
+        } catch (e) {
+            return e
+        }
+        this.pending = false
     }
+
 }
 
 </script>
