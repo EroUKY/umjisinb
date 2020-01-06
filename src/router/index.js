@@ -37,8 +37,8 @@ export default new Router({
             component: () => import('@/components/user/create')
         },
         {
-            path: '/showboard',
-            name: 'showboard',
+            path: '/showBoard',
+            name: 'showBoard',
             component: () => import('@/components/board/showboard')
         },
         {

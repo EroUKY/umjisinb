@@ -5,7 +5,7 @@
 <!--            <input type="text" placeholder="title" v-model="title" />-->
 <!--            <input type="text" placeholder="author" v-model="author" />-->
 <!--            <button>submit</button>-->
-            <table class="table-responsive">
+            <table class="table-responsive border">
                 <thead>
                     <tr>
                         <th>번호</th>
@@ -14,23 +14,46 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>번호들갈곳</td>
-                        <td><router-link to="/showboard" class="btn btn-light">title</router-link></td>
-                        <td>작성자 는 김기영</td>
+                    <tr v-for="content in list" v-bind:key="content.no">
+                        <td>{{content.no}}</td>
+                        <td>
+                            <router-link :to="`/showBoard/${content.no}`">
+                                {{content.title}}
+                            </router-link>
+                        </td>
+                        <td>{{content.author}}</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 </template>
-
 <script>
 export default {
     name: "index",
     data: () => ({
-        // title: 'UMJI',
-        // author: 'KIM'
+        list: [
+            {
+                no: 1,
+                title: '1 컨텐츠',
+                author: '김기영'
+            },
+            {
+                no: 2,
+                title: '2 컨텐츠',
+                author: '김기영'
+            },
+            {
+                no: 3,
+                title: '3 컨텐츠',
+                author: '김기영'
+            },
+            {
+                no: 4,
+                title: '4 컨텐츠',
+                author: '김기영'
+            }
+        ]
     })
 }
 </script>
